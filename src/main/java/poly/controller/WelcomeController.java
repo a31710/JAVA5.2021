@@ -9,4 +9,9 @@ public class WelcomeController {
     public String Welcome(){
         return "index";
     }
+
+    @RequestMapping("/product")
+    public String product_detail(){
+        return "product/index";
+    }
 }
