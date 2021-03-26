@@ -31,6 +31,8 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -139,6 +141,7 @@
 <!-- Breadcrumb End -->
 
 <!-- Product Detail Start -->
+
 <div class="product-detail">
     <div class="container-fluid">
         <div class="row">
@@ -147,25 +150,25 @@
                     <div class="row align-items-center">
                         <div class="col-md-5">
                             <div class="product-slider-single normal-slider">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-1.jpg" alt="Product Image">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-3.jpg" alt="Product Image">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-5.jpg" alt="Product Image">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-7.jpg" alt="Product Image">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-9.jpg" alt="Product Image">
-                                <img src="${pageContext.request.contextPath}/resources/img/product-10.jpg" alt="Product Image">
+                                <img src="${pageContext.request.contextPath}/resources/img/${product.image}" alt="Product Image">
+                                <%--                                <img src="${pageContext.request.contextPath}/resources/img/product-3.jpg" alt="Product Image">--%>
+                                <%--                                <img src="${pageContext.request.contextPath}/resources/img/product-5.jpg" alt="Product Image">--%>
+                                <%--                                <img src="${pageContext.request.contextPath}/resources/img/product-7.jpg" alt="Product Image">--%>
+                                <%--                                <img src="${pageContext.request.contextPath}/resources/img/product-9.jpg" alt="Product Image">--%>
+                                <%--                                <img src="${pageContext.request.contextPath}/resources/img/product-10.jpg" alt="Product Image">--%>
                             </div>
                             <div class="product-slider-single-nav normal-slider">
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-1.jpg" alt="Product Image"></div>
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-3.jpg" alt="Product Image"></div>
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-5.jpg" alt="Product Image"></div>
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-7.jpg" alt="Product Image"></div>
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-9.jpg" alt="Product Image"></div>
-                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-10.jpg" alt="Product Image"></div>
+<%--                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/${product.image}" alt="Product Image"></div>--%>
+<%--                                                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-3.jpg" alt="Product Image"></div>--%>
+<%--                                                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-5.jpg" alt="Product Image"></div>--%>
+<%--                                                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-7.jpg" alt="Product Image"></div>--%>
+<%--                                                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-9.jpg" alt="Product Image"></div>--%>
+<%--                                                                <div class="slider-nav-img"><img src="${pageContext.request.contextPath}/resources/img/product-10.jpg" alt="Product Image"></div>--%>
                             </div>
                         </div>
                         <div class="col-md-7">
                             <div class="product-content">
-                                <div class="title"><h2>Product Name</h2></div>
+                                <div class="title"><h2>${product.name}</h2></div>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -175,7 +178,7 @@
                                 </div>
                                 <div class="price">
                                     <h4>Price:</h4>
-                                    <p>$99 <span>$149</span></p>
+                                    <p>$${product.price}<span>$149</span></p>
                                 </div>
                                 <div class="quantity">
                                     <h4>Quantity:</h4>
@@ -187,17 +190,41 @@
                                 </div>
                                 <div class="p-size">
                                     <h4>Size:</h4>
-                                    <div class="btn-group btn-group-sm">
-                                        <button type="button" class="btn">S</button>
-                                        <button type="button" class="btn">M</button>
-                                        <button type="button" class="btn">L</button>
-                                        <button type="button" class="btn">XL</button>
+<%--                                    <div class="btn-group btn-group-sm">--%>
+<%--                                        <button type="button"  class="btn">S</button>--%>
+<%--                                        <button type="button" class="btn">M</button>--%>
+<%--                                        <button type="button" class="btn">L</button>--%>
+<%--                                        <button type="button" class="btn">XL</button>--%>
+<%--                                    </div>--%>
+
+                                    <!-- Material inline 1 -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="materialInline1" name="size" value="S"
+                                        ${product.size=="S"?"checked":""}>
+                                        <label class="form-check-label" for="materialInline1">S</label>
+                                    </div>
+
+                                    <!-- Material inline 2 -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="materialInline2" name="size" value="M"
+                                        ${product.size=="M"?"checked":""}>
+                                        <label class="form-check-label" for="materialInline2">M</label>
+                                    </div>
+
+                                    <!-- Material inline 3 -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="materialInline3" name="size" value="L"
+                                        ${product.size=="L"?"checked":""}>
+                                        <label class="form-check-label" for="materialInline3">L</label>
                                     </div>
                                 </div>
+
+
+
                                 <div class="p-color">
                                     <h4>Color:</h4>
                                     <div class="btn-group btn-group-sm">
-                                        <button type="button" class="btn">White</button>
+                                        <button type="button" class="btn" value="W">White</button>
                                         <button type="button" class="btn">Black</button>
                                         <button type="button" class="btn">Blue</button>
                                     </div>
@@ -210,6 +237,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <div class="row product-detail-bottom">
                     <div class="col-lg-12">

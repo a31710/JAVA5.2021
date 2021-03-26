@@ -10,8 +10,5 @@ public class WelcomeController {
         return "index";
     }
 
-    @RequestMapping("/product")
-    public String product_detail(){
-        return "product/index";
-    }
+
 }
